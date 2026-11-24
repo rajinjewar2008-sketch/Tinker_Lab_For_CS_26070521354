@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <!-- Linking the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Student Registration Form</h1>
+        
+        <form>
+            <!-- Personal Details Section -->
+            <fieldset>
+                <legend>Personal Details</legend>
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Contact Details Section -->
+            <fieldset>
+                <legend>Contact Details</legend>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" placeholder="example@mail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" placeholder="10-digit mobile number" required>
+                </div>
+            </fieldset>
+
+            <!-- Academic Details Section -->
+            <fieldset>
+                <legend>Academic Details</legend>
+                
+                <div class="form-group">
+                    <label for="course">Select Course:</label>
+                    <select id="course" required>
+                        <option value="" disabled selected>--Choose a course--</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="it">Information Technology</option>
+                        <option value="mech">Mechanical Engineering</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="percentage">12th Percentage:</label>
+                    <input type="text" id="percentage" placeholder="Enter your percentage">
+                </div>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
