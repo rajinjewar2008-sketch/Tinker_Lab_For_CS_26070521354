@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator</title><link rel="stylesheet" href="style.css"><style>
+.calc{max-width:300px;margin:20px auto;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.screen{grid-column:span 4;text-align:right;padding:17px;background:#edf4f8;border-radius:7px;font-size:25px;min-height:60px;overflow:hidden}.calc button{padding:15px;border:0;border-radius:7px;background:#e6f1f6;font-size:18px;cursor:pointer}.calc button:hover{background:#cceaf5}.calc .op{background:#c9eaf6}.calc .equal{background:#1689bd;color:white}
+</style></head><body class="game-page"><h1>Simple Calculator</h1><p>Perform basic maths operations.</p><div class="game-box"><div class="calc"><div class="screen" id="screen">0</div><button onclick="clearScreen()">C</button><button onclick="del()">⌫</button><button class="op" onclick="add('/')">÷</button><button class="op" onclick="add('*')">×</button><button onclick="add('7')">7</button><button onclick="add('8')">8</button><button onclick="add('9')">9</button><button class="op" onclick="add('-')">−</button><button onclick="add('4')">4</button><button onclick="add('5')">5</button><button onclick="add('6')">6</button><button class="op" onclick="add('+')">+</button><button onclick="add('1')">1</button><button onclick="add('2')">2</button><button onclick="add('3')">3</button><button class="equal" onclick="calculate()">=</button><button onclick="add('0')">0</button><button onclick="add('.')">.</button></div></div><a class="back" href="index.html#projects">← Back to portfolio</a>
+<script>
+let expression='';const screen=document.getElementById('screen');
+function show(){screen.textContent=expression||'0'}
+function add(value){expression+=value;show()}
+function clearScreen(){expression='';show()}
+function del(){expression=expression.slice(0,-1);show()}
+function calculate(){try{if(!/^[0-9+*/.() -]+$/.test(expression))throw Error();expression=String(Function('"use strict";return ('+expression+')')());if(expression==='Infinity'||expression==='NaN')throw Error();show()}catch{screen.textContent='Error';expression=''}}
+</script></body></html>
